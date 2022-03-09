@@ -2,10 +2,10 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
+import METAMASK_PHRASE from './secrets.js';
 
 const provider = new HDWalletProvider(
-  'royal party army carry squeeze vicious exchange scout resist swap deputy vacuum',
-  'https://goerli.infura.io/v3/c54545926b944624adb5d11e89bb63e0'
+  METAMASK_PHRASE, INFURA
 );
 const web3 = new Web3(provider);
 
