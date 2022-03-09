@@ -4,6 +4,7 @@ const solc = require('solc');
 const fs = require('fs-extra');
 
 const buildPath = path.resolve(__dirname, 'build');
+// Delete the current build folder.
 fs.removeSync(buildPath); 
 
 const campaignPath = path.resolve(__dirname, 'contracts', 'Campaign.sol');
@@ -16,6 +17,7 @@ fs.ensureDirSync(buildPath);
 console.log(output);
 //loop over the output object and take each contract that exist inside there and write it to a different file
 // inside of the build directory
+console.log(solc.compile(source, 1));
 for (let contract in output) {
     fs.outputJsonSync(
         path.resolve(buildPath, contract.replace(':', '') + '.json'),
