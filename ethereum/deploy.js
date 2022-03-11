@@ -2,7 +2,7 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const Web3 = require('web3');
 const compiledFactory = require('./build/CampaignFactory.json');
-import METAMASK_PHRASE from './secrets.js';
+import {METAMASK_PHRASE, INFURA} from './secrets.js';
 
 const provider = new HDWalletProvider(
   METAMASK_PHRASE, INFURA
